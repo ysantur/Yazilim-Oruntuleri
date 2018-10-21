@@ -1,0 +1,49 @@
+# -*- coding: utf-8 -*-
+"""
+Created on Thu Oct 18 14:58:59 2018
+
+@author: ysantur@gmail.com
+"""
+
+#Creational
+class Prototype(object):
+
+    value = 'default'
+
+    def clone(self, **attrs):
+        """Clone a prototype and update inner attributes dictionary"""
+        # Python in Practice, Mark Summerfield
+        obj = self.__class__()
+        obj.__dict__.update(attrs)
+        return obj
+
+
+class PrototypeDispatcher(object):
+    def __init__(self):
+        self._objects = {}
+
+    def get_objects(self):
+        return self._objects
+
+    def register_object(self, name, obj):
+        self._objects[name] = obj
+
+    def unregister_object(self, name):
+        del self._objects[name]
+
+
+def main():
+    dispatcher = PrototypeDispatcher()
+    prototype = Prototype()
+
+    d = prototype.clone()
+    a = prototype.clone(value='a-value', category='a')
+    b = prototype.clone(value='b-value', is_checked=True)
+    dispatcher.register_object('objecta', a)
+    dispatcher.register_object('objectb', b)
+    dispatcher.register_object('default', d)
+    print([{n: p.value} for n, p in dispatcher.get_objects().items()])
+
+
+if __name__ == '__main__':
+    main()
