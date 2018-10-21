@@ -36,12 +36,12 @@ def main():
     dispatcher = PrototypeDispatcher()
     prototype = Prototype()
 
-    d = prototype.clone()
-    a = prototype.clone(value='a-value', category='a')
-    b = prototype.clone(value='b-value', is_checked=True)
+    a = prototype.clone()
+    b = prototype.clone(value='a-value', category='a')
+    c = prototype.clone(value='b-value', is_checked=True)
     dispatcher.register_object('objecta', a)
     dispatcher.register_object('objectb', b)
-    dispatcher.register_object('default', d)
+    dispatcher.register_object('default', c)
     print([{n: p.value} for n, p in dispatcher.get_objects().items()])
 
 
