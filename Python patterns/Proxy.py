@@ -4,7 +4,9 @@ Created on Thu Oct 18 15:26:35 2018
 
 @author: ysantur@gmail.com
 """
-#Structural
+
+#Proxy Structural pattern
+#Gerçek nesne yerine proxy içinde oluşturukan vekil nesne kullanılır
 
 from __future__ import print_function
 import time

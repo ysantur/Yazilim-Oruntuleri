@@ -5,7 +5,9 @@ Created on Thu Oct 18 15:14:53 2018
 @author: ysantur@gmail.com
 """
 
-#Creational
+#Creational pattern
+#Bir nesneden sadece bir tane oluşturulmasını garanti etmeye yarar
+
 class Singleton:
    __instance = None
    @staticmethod 

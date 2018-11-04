@@ -8,8 +8,8 @@ Created on Thu Oct 18 13:19:59 2018
 from __future__ import generators
 import random
 
-#Creational
-#Abstract Factory
+#Creational Abstract Factory
+#Birbiri ile ilişkili nesnelerin kolay oluşturulmasını sağlayan bir yaklaşım
 class Shape(object):
     # Create based on class name:
     def factory(type):

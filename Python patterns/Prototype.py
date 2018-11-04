@@ -6,6 +6,7 @@ Created on Thu Oct 18 14:58:59 2018
 """
 
 #Creational
+#Tüm nesneler için bir prototip nesne üretilir, diğer nesneler burdan clonlanır
 class Prototype(object):
 
     value = 'default'
