@@ -1,0 +1,25 @@
+# Singletion pattern kullanarak birden fazla thread'in kritik kaynak (işlemci) sırası ile kullanımını simüle etmek
+class Singletion:
+  tek=None
+  def __init__(self,name="", sure=0):
+    self.name=name
+    self.sure=sure
+    if Singletion.tek!=None:
+      raise Exception("Singletion tasarim")
+    else:
+      Singletion.tek=self
+      print(self.name,self.sure)
+
+
+
+  
+threads={"chrome":5, "word":4, "winamp":7}
+
+cpu=2
+print(sum(threads.values()))
+
+while(sum(threads.values())>=0):
+  for k,v in threads.items():
+    x=Singletion(k,v)
+    threads[k]=v-cpu
+    Singletion.tek=None
