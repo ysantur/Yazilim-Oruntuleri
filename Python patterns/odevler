@@ -1,7 +1,0 @@
-Ödevler
-
-1) Singletion pattern kullanılarak threadların kritik kaynakta (işlemci) sıralı çalışmasını simüle edin, örneğin chrome:5, word:3 
-her bir thread cpu'da 2 ms süre geçireceğini varsayılacak.
-
-2) https://blockchain.info/ticker adresinden anlık kriptopara birimleri json verisi alınarak her bir kriptopara (seçilen 3 tanesi)
-anlık fiyatı kendi sınıfına ait nesne ile Factory pattern kullanılarak kaydedilecek.
