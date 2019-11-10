@@ -1,0 +1,50 @@
+import requests
+import json
+import time
+
+class TRY:
+  prices=[]
+  def __init__(self,price):
+    TRY.prices.append(price)
+  
+  def show(self):
+    print(TRY.prices)
+
+class USD:
+  prices=[]
+  def __init__(self,price):
+    USD.prices.append(price)
+  
+  def show(self):
+    print(USD.prices)
+
+class CHF:
+  prices=[]
+  def __init__(self,price):
+    CHF.prices.append(price)
+  
+  def show(self):
+    print(CHF.prices)
+ 
+class Factory:
+  def yaz(self,k,v):
+    if k=="TRY":
+      return TRY(v)
+    elif k=="CHF":
+      return CHF(v)
+    elif k=="USD":
+      return USD(v)
+    else:
+      return None
+
+
+url = "https://api.exchangeratesapi.io/latest"
+
+for i in range(3):  
+  response = requests.get(url)
+  data = response.text
+  parsed = json.loads(data)
+  sozluk=parsed["rates"]
+  f=Factory()
+  for k,v in sozluk.items():
+    x=f.yaz(k,v)
